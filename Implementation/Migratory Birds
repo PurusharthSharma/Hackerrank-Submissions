@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+   public static void main(String args[]){		
+		Scanner sys=new Scanner (System.in);				
+		int num=sys.nextInt();		
+		int type[]=new int [200000];		
+		int count=0,max=-1,mostcommonbird=-1,birdtype=0;		
+		for(int i=0;i<num;i++){
+			type[i]=sys.nextInt();
+			if(max<type[i]){
+				max=type[i];
+			}
+			count++;
+		}		
+		int nulltype[]=new int[200000]; 		
+		for(int i=0;i<=max;i++){
+			nulltype[i]=0;
+		}		
+		for(int j=0;j<count;j++){
+			nulltype[type[j]]=nulltype[type[j]]+1;			
+		}		    
+       for(int k=0;k<count;k++){
+			if(mostcommonbird<nulltype[k]){
+				mostcommonbird=nulltype[k];
+				birdtype=k;
+			}
+		}       
+		System.out.println(birdtype);
+    }
+}
