@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sys=new Scanner(System.in);
+		int i,val,pos=0,max=0,arrmax=0,arrval=0;
+		int arr[]=new int[26];		
+		for(i=0;i<26;i++){
+			arr[i]=sys.nextInt();			
+		}		
+		String s1=sys.next();		
+		int l1=s1.length();		
+		for( i=0;i<s1.length();i++){		
+			val=(int)s1.charAt(i);
+			for(int j=0;j<26;j++){
+				if((val-97)==j){
+					if(max<arr[j]){
+						max=arr[j];
+					}		
+				}
+			}			
+		}		
+		System.out.println((max*l1));
+    }
+}
