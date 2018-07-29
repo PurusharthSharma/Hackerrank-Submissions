@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {  
+       
+    public static int rev(int num){
+		int rev=0;
+		while(num!=0){
+			rev=rev*10;
+			rev=rev+num%10;
+			num=num/10;
+		}
+		return rev;
+	}
+  
+	public static void main(String args[]){
+		Scanner sys=new Scanner(System.in);
+		
+		int d1=sys.nextInt();		
+		int d2=sys.nextInt();
+		int count=0,i;		
+		
+		int k=sys.nextInt();
+		
+		for(i=d1;i<=d2;i++){
+			if((i-rev(i))%k==0){
+				count++;
+			}			
+		}
+		System.out.print(count);
+    }
+}
