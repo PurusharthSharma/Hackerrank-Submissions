@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {   
+
+    public static void main(String[] args) {
+        int least_p,most_p,lp=0,mp=0;
+		
+		Scanner sys = new Scanner(System.in);
+				
+		int num = sys.nextInt();
+		
+		int game[] = new int[num];		
+		for(int i=0;i<num;i++){
+			game[i] = sys.nextInt();
+		}
+		
+		least_p=game[0];
+		most_p=game[0];
+		
+		for(int i=0;i<num;i++){
+			if(least_p>game[i]){
+				least_p=game[i];
+				lp++;
+			}
+			if(most_p<game[i]){
+				most_p=game[i];
+				mp++;
+			}
+		}
+		
+		System.out.println(mp+" "+lp);
+	}
+}
