@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {  
+    public static void main(String[] args) {
+      Scanner sys=new Scanner(System.in);
+		
+		int start_k1,jump_k1,start_k2,jump_k2,floc_k1,floc_k2,flag=0;		
+		
+		start_k1=sys.nextInt();
+		jump_k1=sys.nextInt();		
+		
+		start_k2=sys.nextInt();
+		jump_k2=sys.nextInt();
+		
+		floc_k1=start_k1;
+		floc_k2=start_k2;
+		
+		if(start_k2>start_k1 && jump_k2>jump_k1){
+			System.out.println("NO");
+		}
+		else{
+			for(int i=0;i<10000;i++){
+				floc_k1=floc_k1+jump_k1;			
+				floc_k2=floc_k2+jump_k2;			
+				
+				if(floc_k1==floc_k2){
+					flag=1;
+					break;
+				}			
+			}
+			if(flag==0)
+				System.out.println("NO");
+			else
+				System.out.println("YES");
+		}
+    }
+}
