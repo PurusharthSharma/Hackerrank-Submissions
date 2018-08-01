@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){		
+		Scanner sys=new Scanner (System.in);		
+		int students=sys.nextInt();		
+		int grades[]=new int [100];
+		for(int i=0;i<students;i++){
+			grades[i]=sys.nextInt();
+		}		
+		int rem,cmp;		
+		for(int i=0;i<students;i++)
+		  {
+		    if(grades[i]<38)
+		    {
+		      System.out.println(grades[i]);
+		    }
+		    else
+		    {
+		      rem=grades[i]/5+1;
+		      cmp=rem*5;
+		      if(cmp-grades[i]<3)
+		      {
+		    	  grades[i]=cmp;		      
+		      }
+		      System.out.println(grades[i]);
+		     }
+		  }		
+	}   
+}
