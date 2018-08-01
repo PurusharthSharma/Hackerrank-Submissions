@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {    
+
+    public static void main(String[] args) {
+    
+    int dd=0,mm=0,yy=0,sum,pday=256;
+		Scanner sys=new Scanner (System.in);
+		//System.out.println("Enter The Year : ");
+		int year=sys.nextInt();
+		if(year>=1700 && year<=2700){
+			 if(year>1918){
+		         if  ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)){
+		        	 yy=year;
+		        	 //mm=mm+9;
+		        	 //dd=dd+12;	
+		        	 System.out.println("12"+".09"+"."+yy);
+		         }
+		         else{
+		        	 yy=year;
+		        	 //mm=mm+9;
+		        	 //dd=dd+13;
+		        	 System.out.println("13"+".09"+"."+yy);
+		         }
+			 }
+		      if(year<1918){
+		    	  if(year%4==0){
+		        	 yy=year;
+		        	 //mm=mm+9;
+		        	 //dd=dd+12;
+		        	 System.out.println("12"+".09"+"."+yy);
+		         }
+		         else{
+		        	 yy=year;
+		        	// mm=mm+9;
+		        	 //dd=dd+13;
+		        	 System.out.println("13"+".09"+"."+yy);
+		         }
+		      }
+		      if(year==1918){
+		    	  yy=1918;
+		    	  //dd=dd+26;
+		    	  //mm=mm+9;
+		    	  System.out.println("26"+".09"+"."+yy);
+		      }
+		         
+			 
+			 //System.out.println(dd+".0"+mm+"."+yy);
+		}
+       
+    }
+}
