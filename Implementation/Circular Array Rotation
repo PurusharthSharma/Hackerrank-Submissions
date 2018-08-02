@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String args[]){		
+		Scanner sys=new Scanner (System.in);		
+		int num=sys.nextInt();		
+		int op=sys.nextInt();		
+		int index=sys.nextInt();		
+		int count=0;		
+		int arr[]=new int[1000000];
+		for(int i=0;i<num;i++){
+			arr[i]=sys.nextInt();
+			count++;
+		}		
+		int trav[]=new int[1000000];
+		for(int i=0;i<index;i++){
+			trav[i]=sys.nextInt();
+		}		
+		int temp,ans=0;;
+		temp=op%num;		
+		int ans_arr[]=new int [1000000];		
+		for(int i=0;i<index;i++){
+			ans=0;
+			if(trav[i]-temp>=0){
+				ans=arr[trav[i]-temp];
+			}
+			else {
+				ans=arr[trav[i]-temp+count];
+			}			
+			ans_arr[i]=ans;
+		}		
+		for(int i=0;i<index;i++){
+			System.out.println(ans_arr[i]+" ");
+		}		
+	}
+}
