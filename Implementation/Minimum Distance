@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sys=new Scanner (System.in);
+		int num,i,j,mine=1000000,val=0,flag=0;
+		
+		int arr[]=new int[1000000];
+		
+		//System.out.print("Enter The Size of The Array : ");
+		num=sys.nextInt();
+		
+		//System.out.print("Enter Data in the Array : ");
+		for(i=0;i<num;i++){
+			arr[i]=sys.nextInt();
+		}
+		
+		for(i=0;i<num;i++){
+			for(j=i+1;j<num;j++){
+				if(arr[i]==arr[j]){
+					val=j-i;
+					//System.out.println(val);
+					if(mine>val){
+						mine=val;
+						flag=1;
+					}
+				}
+				
+				
+			}
+		}
+		
+		if(flag==1){
+			System.out.print(mine);
+		}
+		if(flag==0){
+			mine=-1;
+			System.out.println(mine);
+		}
+    }
+}
