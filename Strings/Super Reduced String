@@ -1,0 +1,31 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+   public static void main(String args[]) {
+		
+		Scanner sys=new Scanner (System.in);
+		
+		//System.out.print("Enter the String : ");
+		String in=sys.next();
+		
+		for(int i=1;i<in.length();i++) {
+			if (in.charAt(i)==in.charAt(i-1)) {
+				in=in.substring(0,i-1)+in.substring(i+1);
+				i=0;
+			}
+		}
+		
+		if(in.length()==0)
+			System.out.println("Empty String");
+		else
+			System.out.println(in);
+		
+	}
+       
+}
