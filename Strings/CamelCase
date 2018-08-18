@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        String s1;
+		char ch;
+		int count=1;
+		
+		Scanner sys = new Scanner(System.in);
+		//System.out.println("Enter String : ");
+		s1=sys.next();
+		for(int i=0;i<s1.length();i++){
+			ch=s1.charAt(i);
+			int string=(int)ch;
+		
+			if(string >=65 && string <=90){
+				count++;
+				}
+				
+		}
+		System.out.println(count);
+    }
+}
