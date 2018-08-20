@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){
+		
+		Scanner sys=new Scanner (System.in);
+		
+		//System.out.print("Enter THe Lenhth of The String : ");
+		int length=sys.nextInt();
+		
+		//System.out.print("Enter The String : ");
+		String s1=sys.next();
+		
+		//System.out.print("Enter The Number of moves you want to rotate the Message :");
+		int rotate=sys.nextInt();
+		
+		int temp,greater;
+		String str="";
+		
+		String modified="";
+		
+		for(int i=0;i<s1.length();i++){
+			int val=(int)s1.charAt(i);
+			
+			temp=val;
+			
+			if(val>=65 && val<=90){
+				temp=temp+rotate;
+				while(temp>90){
+					greater=temp-90;
+					temp=64+greater;
+				}
+			}
+			
+			if(val>=97 && val<=122){
+				temp=temp+rotate;
+				while (temp>122){
+					greater=temp-122;
+					temp=96+greater;
+				}
+			}
+			
+			else
+				temp=temp;
+			
+			str=Character.toString((char)temp);
+			
+			modified=modified.concat(str);
+			
+		
+		}
+		
+		System.out.println(modified);
+		
+	}    
+}
