@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){		
+		Scanner sys=new Scanner (System.in);		
+		int cases=sys.nextInt();		
+		for(int loop=0;loop<cases;loop++){		
+			String msg=sys.next();			
+			int start,end;
+			int count=0;			
+			start=0;
+			end=msg.length()-1;			
+			int temp=0;			
+			for(int i=0;i<msg.length()/2;i++){
+				count=count+Math.abs(msg.charAt(start)-msg.charAt(end));
+				start++;
+				end--;				
+			}			
+			System.out.println(count);			
+		}		
+	}
+}
