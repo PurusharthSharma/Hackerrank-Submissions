@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){		
+		Scanner sys=new Scanner (System.in);				
+		int num=sys.nextInt();		
+		String rocks[]=new String[1000];				
+		String rock;				
+		for(int i=0;i<num;i++){			
+			int length;
+			char ch;
+			rock=sys.next();
+			String s="";
+			length=rock.length();			
+			for(int j=0;j<length;j++){
+				ch=rock.charAt(j);
+				if(ch!=' ')
+					s=s+ch;
+				rock=rock.replace(ch,' ');							
+			}			
+			rocks[i]=s;			
+        }		
+		String con="";		
+		for(int i=0;i<num;i++){
+			con=con.concat(rocks[i]);
+		}		
+		
+		
+		int count=0,result=0;
+		char ch;		
+		for(char c='a';c<='z';c++ ){
+			count=0;
+			for(int j=0;j<con.length();j++){
+				ch=con.charAt(j);
+				if(ch==c){
+					count++;
+				}
+			}	
+			if (count==num)
+				result++;
+		}				
+		System.out.println(result);				
+	}   
+}
