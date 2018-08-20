@@ -1,0 +1,73 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){
+		
+		Scanner sys=new Scanner(System.in);		
+		
+		String string=sys.next();
+		
+		int count=0,temp=0,arr_count=0;
+		char ch,c;
+		int arr[]=new int[100];				
+		
+		for( c='a';c<='z';c++ ){
+			count=0;
+			for(int j=0;j<string.length();j++){
+				ch=string.charAt(j);
+				if(ch==c){
+					count++;
+				}
+			}				
+			
+			arr[arr_count]=count;			
+			arr_count++;						
+		}				
+        
+		int zero_counter=0;
+		
+		for(int i=0;i<26;i++){		
+			if(arr[i]!=0){
+				zero_counter++;
+			}
+		}	
+		
+		int check_arr[]=new int [100];
+		
+		for(int i=0,j=0;i<26;i++){
+			if(arr[i]!=0){
+				check_arr[j]=arr[i];
+				j++;
+			}
+		}		
+		
+		String ans="YES";
+		int count_odd=0;
+		
+		if(string.length()%2==0){
+			for(int i=0;i<zero_counter;i++){
+				if(check_arr[i]%2==1){
+					ans="NO";
+				}
+			}
+		}
+		
+		else{
+			for(int i=0;i<zero_counter;i++){
+				if(check_arr[i]%2==1){
+					count_odd++;
+				}
+			}
+			if(count_odd!=1){
+				ans="NO";
+			}
+		}			
+		
+		System.out.println(ans);		
+		
+	} 
+}
