@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sys=new Scanner (System.in);
+		
+		//System.out.print("Enter The Number of Terms : ");
+		int num=sys.nextInt();
+		
+		//System.out.print("Enter The Difference Value : ");
+		int diff=sys.nextInt();
+		
+		//System.out.print("Enter The Data in The List : ");
+		int list[]=new int[100000];
+		for(int i=0;i<num;i++){
+			list[i]=sys.nextInt();
+		}
+		
+		int count=0;
+		
+		int num1 = list[0];
+		int num2 = list[1];
+		int num3 = list[2];
+		
+		for(int i=0;i<num-2;i++){
+			for(int j=i+1;j<num-1;j++){
+                if(list[j]-list[i]==diff){
+				for(int k=j+1;k<num;k++){
+					
+					if((list[k]-list[j])==diff &&(list[j]-list[i])==diff){
+						count++;
+					}
+					
+				}
+                }
+			}
+		}
+		
+		System.out.println(count);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
