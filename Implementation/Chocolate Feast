@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sys=new Scanner (System.in);
+		
+		int sum=0,sum1=0,exchange=0, rem=0,amt,price,wrap;				
+		int trips=sys.nextInt();		
+		for(int i=0;i<trips;i++){		
+			 amt=sys.nextInt();		
+			 price=sys.nextInt();		
+			 wrap=sys.nextInt();
+			
+			sum=amt/price;
+			exchange=sum;
+			
+			while(exchange>=wrap){
+				sum1=exchange/wrap;
+				sum=sum+sum1;
+				rem=exchange%wrap;
+				exchange=sum1+rem;
+			}
+			
+			System.out.println(sum);
+		}
+    }
+}
