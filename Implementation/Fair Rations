@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sys = new Scanner(System.in);
+		int sum=0;	
+		
+		int n = sys.nextInt(),count=0;		
+		int bread[]=new int[n];
+	
+		for(int i=0;i<n;i++){
+			bread[i]=sys.nextInt();
+            sum=sum+bread[i];
+		}
+		if(sum%2==0){
+		for(int i=0;i<n;i++){
+			
+			if(bread[i]%2!=0) {
+				bread[i]++;
+				bread[i+1]++;
+				count+=2;
+			}			
+		}
+        System.out.println(count);
+        }
+		else{
+            System.out.println("NO");
+        }			
+		
+    }
+}
