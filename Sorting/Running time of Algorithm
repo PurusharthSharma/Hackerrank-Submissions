@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {     
+		Scanner cmp=new Scanner (System.in);
+		int arr_l[],i,j,key,n,count=0;
+		arr_l=new int[10000];				
+		n=cmp.nextInt();		
+		for(i=0;i<n;i++){
+			arr_l[i]=cmp.nextInt();
+		}		
+		for(j=1;j<n;j++){
+			key=arr_l[j];
+			i=j-1;
+			while(i>=0 && arr_l[i]>key){
+				arr_l[i+1]=arr_l[i];
+				i=i-1;
+				count++;		
+			}
+			arr_l[i+1]=key;			
+		}		
+		System.out.println(count);
+		
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
