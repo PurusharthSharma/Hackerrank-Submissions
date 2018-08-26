@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        int i,key,count=0,num;
+		
+		Scanner sys = new Scanner (System.in);
+		
+		//System.out.print("Enter The VAlue to Be Searched in the Array : ");
+		key = sys.nextInt();
+		
+		//System.out.print("Enter The Number of Elements in the Array : " );
+		num=sys.nextInt();
+		
+		int arr[] = new int[100];
+		
+		//System.out.println("Enter The Data in the List : ");
+		for(i=0;i<num;i++){
+			arr[i] = sys.nextInt();
+		}
+		
+		for(i=0;i<num;i++){
+			if(key==arr[i]){
+				break;
+			}
+			else
+				count++;
+		}
+		System.out.println((count));
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
