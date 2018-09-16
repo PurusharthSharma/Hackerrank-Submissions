@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+       int arr_l[],i,j,key,n;
+	
+		Scanner cmp=new Scanner (System.in);
+		
+		
+		n=cmp.nextInt();
+        
+        arr_l=new int[n];
+		
+	
+		for(i=0;i<n;i++){
+			arr_l[i]=cmp.nextInt();
+		}
+		
+		for(j=1;j<n;j++){
+			key=arr_l[j];
+			i=j-1;
+			while(i>=0 && arr_l[i]>key){
+				arr_l[i+1]=arr_l[i];
+				i=i-1;
+			}
+			arr_l[i+1]=key;
+		}
+		
+		for(i=0;i<n;i++){
+			System.out.print(arr_l[i]+" ");
+		}
+       
+    }
+}
