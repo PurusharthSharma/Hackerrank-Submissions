@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   
+    public static void main(String[] args) {
+       int i,j,sum,count=0;
+		Scanner sys=new Scanner (System.in);		
+		int num=sys.nextInt();		
+		int k=sys.nextInt();		
+		int arr[]=new int[num];		
+		for(i=0;i<num;i++){
+			arr[i]=sys.nextInt();
+		}		
+		for(i=0;i<num;i++){
+			for(j=i+1;j<num;j++){
+				sum=arr[i]+arr[j];
+				if(sum%k==0){
+					count=count+1;
+				}
+				sum=0;
+            }			
+		}
+        System.out.println(count);
+    }
+}
