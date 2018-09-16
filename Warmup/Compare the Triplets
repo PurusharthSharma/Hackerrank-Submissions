@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){
+
+        int i,alp=0,blp=0,al,bob;
+		int al_a[]=new int[3];
+		int bob_a[]=new int[3];
+		
+		Scanner sys = new Scanner(System.in);					
+		
+		for(i=0;i<3;i++){
+			al_a[i]=sys.nextInt();
+		}
+		
+		for(i=0;i<3;i++){
+			bob_a[i]=sys.nextInt();
+		}
+		
+		for(i=0;i<3;i++){
+			if(al_a[i]>bob_a[i]){
+				alp=alp+1;
+			}
+			if(al_a[i]<bob_a[i]){
+				blp=blp+1;
+			}
+			if(al_a[i]==bob_a[i]){
+				alp=alp;
+				blp=blp;
+			}
+		}
+		
+		System.out.println(alp+" "+blp);
+		
+    }
+}
