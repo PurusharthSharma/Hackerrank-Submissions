@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sys=new Scanner(System.in);
+		int count=0;				
+		String s1=sys.next();		
+		
+		int length=s1.length();
+		
+		if(length%3==0){		
+			for(int i=0;i<s1.length();i=i+3){
+				if(s1.charAt(i)!='S')
+					count++;
+				if(s1.charAt(i+1)!='O')
+					count++;
+				if(s1.charAt(i+2)!='S')
+					count++;							
+			}	
+		}
+		System.out.println(count);	
+    }
+}
