@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){
+		
+		Scanner sys=new Scanner (System.in);
+		
+
+		int steps=sys.nextInt();
+		
+		
+		String s1=sys.next();
+		
+		int up=0,count=0;
+		
+		for(int i=0;i<steps;i++){
+			char ch=s1.charAt(i);
+			//System.out.print(ch);
+			if(ch=='U'){
+				up=up+1;
+				if(up==0)
+					count++;
+			}
+			else if(ch=='D') 
+				up=up-1;;
+			
+			
+			
+			
+		}
+		
+		System.out.println(count);
+		
+		
+	}
+   
+}
