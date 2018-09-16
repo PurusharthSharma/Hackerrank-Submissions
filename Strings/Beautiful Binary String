@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sys=new Scanner(System.in);		
+		String s1;
+		int count=0,num;		
+		num=sys.nextInt();		
+		s1=sys.next();		
+		char ch[]=s1.toCharArray();		
+		for(int i=0;i<num;i++){
+			if(i<num-2){		
+			if(ch[i]=='0' && ch[i+1]=='1' && ch[i+2]=='0'){
+				count++;
+				i+=2;		
+			}
+			}
+		}
+		
+		System.out.println(count);
+		
+    }
+}
