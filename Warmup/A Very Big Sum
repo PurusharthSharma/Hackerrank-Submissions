@@ -1,0 +1,22 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+
+int main() {
+    long int n,arr[10],result=0,i;
+    scanf("%li ", &n);
+    for(i=0;i<n;i++){
+        scanf("%li ", &arr[i]);
+    }
+    for(i=0;i<n;i++){
+        result=result+arr[i];
+    }    
+    printf("%ld", result);
+    return 0;
+}
