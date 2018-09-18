@@ -1,0 +1,52 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String args[]) {
+		
+		Scanner sys=new Scanner(System.in);
+		
+		//System.out.println("Enter The Size of The Array :");
+		int num=sys.nextInt();
+		
+		//System.out.println("Enter Te Elements in the array :");
+		int arr[]=new int[100];
+		for(int i=0;i<num;i++) {
+			arr[i]=sys.nextInt();
+		}
+		
+		int t1,t2,max=0;
+		
+		for(int i=0;i<num;i++) {
+			t1=0;
+			t2=0;
+			for(int j=0;j<num;j++) {
+				
+				if(arr[i]-arr[j]>=0 && arr[i]-arr[j]<=1)
+					t1++;
+				
+				if(arr[i]-arr[j]<=0 && arr[i]-arr[j]>=-1)
+					t2++;				
+				
+			}
+			
+			if(max<t2)
+				max=t2;
+			if(max<t1)
+				max=t1;
+				
+		}
+		
+		System.out.println(max);
+		
+	}
+
+
+   
+}
