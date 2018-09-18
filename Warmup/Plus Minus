@@ -1,0 +1,37 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n,i,arr[100],pc=0,nc=0,zc=0; 
+    float pf,nf,zf;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf(" %d",&arr[i]);
+    }
+      for(i=0;i<n;i++){
+        if(arr[i]>0){
+            pc=pc+1;
+        }
+        if(arr[i]==0){
+            zc=zc+1;
+        }
+        if(arr[i]<0){
+            nc=nc+1;
+        }
+    }
+    pf=(float)pc/n;
+    zf=(float)zc/n;
+    nf=(float)nc/n;
+    
+    printf("%f",pf);
+    printf("\n%f",nf);
+    printf("\n%f",zf);
+    
+    return 0;
+}
+
