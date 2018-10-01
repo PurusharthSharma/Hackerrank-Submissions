@@ -1,0 +1,61 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main()
+
+{
+
+  int n,mat[100][100],i,j,d1=0,m,d2=0,ans;
+
+ 
+  scanf("%d",&n);
+
+
+
+ // printf("\nEnter Data in the matrix :");
+  for(i=0;i<n;i++)
+  {
+    for(j=0;j<n;j++)
+    {
+      scanf("%d",&mat[i][j]);
+    }
+  }
+
+
+
+   for(i=0;i<n;i++)
+   {
+     for(j=0;j<n;j++)
+     {
+       if(i==j)
+       {
+	 d1=mat[i][j]+d1;
+       }
+     }
+   }
+
+   //printf("\nd1= %d",d1);
+
+
+
+    for(i=0;i<n;i++)
+    {
+      d2=d2+mat[i][n-i-1];
+    }
+
+
+  ans=d1-d2;
+  if(ans<0)
+  {
+    ans=ans/-1;
+  }
+  printf("%d",ans);
+
+  return(0);
+  
+}
