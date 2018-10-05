@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sys=new Scanner (System.in);
+		int count=0,i,max=0,val=0;				
+		int num=sys.nextInt();		
+		int array[]=new int[100];		
+		
+		for( i=0;i<num;i++){
+			array[i]=sys.nextInt();
+		}		
+		int count_a[]=new int[100];				
+		for( i=0;i<num;i++)
+		{
+			count=1;
+			for(int j=i+1;j<num;j++){
+				if(array[i]==array[j] && array[i]!='\0'){
+					count++;
+					array[j]='\0';
+					val++;
+				}
+			}			
+			count_a[i]=count;
+			if(max<count_a[i]){
+				max=count_a[i];
+			}		
+		}		
+		
+		System.out.println((num-max));
+       
+    }
+}
