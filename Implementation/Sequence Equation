@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+  public static void main(String args[]){
+		
+		Scanner sys=new Scanner (System.in);
+		
+		//System.out.print("Enter The Numer Of Elements : ");
+		int num=sys.nextInt();
+		
+		
+		int temp_var;
+		int arr[]=new int [100];
+		int temp[]=new int [100];
+		for(int i=1;i<=num;i++){
+			arr[i]=sys.nextInt();
+			temp_var=arr[i];
+			temp[temp_var]=i;
+			
+		}
+      
+				
+		
+		
+		int temp1[]=new int [100];		
+		for(int i=1;i<=num;i++){
+			temp1[i]=temp[temp[i]];
+		}
+		
+		for(int i=1;i<=num;i++){
+			System.out.println(temp1[i]);
+		}
+		
+	}
+}
