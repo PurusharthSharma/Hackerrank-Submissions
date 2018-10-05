@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[]){
+		
+		Scanner sys=new Scanner (System.in);
+		
+		//System.out.print("Enter The Number Of Test Cases : ");
+		long cases=sys.nextInt();
+		
+		for(long loop=0;loop<cases;loop++){
+			
+			//System.out.print("Enter The Number of Black and White Gifts : ");
+			long black=sys.nextInt();
+			long white=sys.nextInt();
+			
+			//System.out.print("Enter The Cost of Black Balls : ");
+			long x=sys.nextInt();
+			
+			//System.out.print("Enter The Cost of White Balls : ");
+			long y=sys.nextInt();
+			
+			//System.out.print("Enter The Cost For Exchanging the Cost : ");
+			long z=sys.nextInt();			
+			
+			long white_cost=0,black_cost=0;			
+			
+			if(x<(y+z)){
+				black_cost=black*x;
+			}
+			else
+				black_cost=black*(y+z);
+			
+			if(y<(x+z)){
+				white_cost=white*y;
+			}
+			else white_cost=white*(x+z);			
+			
+			
+			long cost=white_cost+black_cost;
+			
+			System.out.println(cost);
+			
+			
+			
+		}
+		
+	}    
+}
