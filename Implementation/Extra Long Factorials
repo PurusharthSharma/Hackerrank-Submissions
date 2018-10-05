@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String args[]){
+		Scanner sys=new Scanner(System.in);		
+		int num=sys.nextInt();		
+		String fact=fact_fun(num);
+		System.out.println(fact);
+	}	
+	public static String fact_fun(int num){
+		BigInteger fact=new BigInteger("1");
+		for(int i=1;i<=num;i++){
+			fact=fact.multiply(new BigInteger(i + ""));
+		}
+		return fact.toString();
+	}
+}
