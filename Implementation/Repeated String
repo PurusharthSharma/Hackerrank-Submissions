@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String args[])throws Exception{
+		
+		Scanner sys=new Scanner(System.in);
+		
+		//System.out.print("Enter The String : ");
+		String s1=sys.next();
+		
+		//System.out.print("Enter The Length :");
+		long length=sys.nextLong();
+		
+		long count=0,mod,div;
+		
+		mod=length%s1.length();
+		
+		div=length/s1.length();
+		
+		for(int i=0;i<s1.length();i++){
+			if(s1.charAt(i)=='a'){
+				count++;
+			}			
+		}
+		
+		long ans=count*div;
+		
+		for(int i=0;i<mod;i++){
+			if(s1.charAt(i)=='a'){
+				ans++;
+			}
+		}
+		
+		System.out.println(ans);
+		
+	}
+}
