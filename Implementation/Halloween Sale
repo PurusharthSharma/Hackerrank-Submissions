@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int p = in.nextInt();
+        int d = in.nextInt();
+        int m = in.nextInt();
+        int s = in.nextInt();
+        int val=0,count=-1;
+        while(val<=s){
+            val=val+p;
+            count++;
+            p=p-d;
+            if(p<m){
+               p=m;
+                
+        }
+     
+      
+    } System.out.println(count);
+}  
+}
