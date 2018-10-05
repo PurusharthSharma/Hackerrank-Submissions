@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      int max=0,mmb=0;
+        
+		Scanner scan = new Scanner (System.in);		
+		
+		int num = scan.nextInt();		
+		
+		int key = scan.nextInt();
+		
+		int hurdles[] = new int[num];		
+		
+		for(int i=0;i<num;i++){
+			hurdles[i] = scan.nextInt();
+		}
+		
+		max=0;
+		for(int i=0;i<num;i++){
+			if(max<hurdles[i]){
+				max=hurdles[i];
+			}
+		}		
+		
+		if(max>key){
+		mmb=max-key;
+		}
+		else {
+			mmb=0;
+		}
+		System.out.println(mmb);
+    }
+}
