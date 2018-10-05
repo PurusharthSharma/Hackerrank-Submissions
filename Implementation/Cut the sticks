@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sys = new Scanner(System.in);		
+	        int num = sys.nextInt();
+	        int arr[] = new int[num];
+	        for(int i =0; i<num;i++){
+	            arr[i] = sys.nextInt();
+	        }	        	        
+	        int t,key,count=0;	        
+			for(int j=1;j<num;j++){
+				key=arr[j];
+				t=j-1;
+				while(t>=0 && arr[t]>key){
+					arr[t+1]=arr[t];
+					t=t-1;
+					count++;					
+				}
+				arr[t+1]=key;			
+			}			
+	        int min = arr[0];
+	        for(int i =0; i<num;){
+	            System.out.println(arr.length-i);
+	            i++;
+	            while(arr[i]==min){
+	                i++;
+	            }
+	            min = arr[i];
+	        }			
+    }
+}
